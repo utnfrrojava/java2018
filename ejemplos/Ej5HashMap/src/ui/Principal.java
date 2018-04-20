@@ -31,19 +31,21 @@ public class Principal {
 		System.out.println("");
 		System.out.println("foreach");
 		
-		for (Map.Entry entry: map.entrySet()) {
-			System.out.println("Key: "+entry.getKey()+", Value: "+entry.getValue());
+		for (Map.Entry ent: map.entrySet()) {
+			Integer key=(Integer)ent.getKey();
+			Persona per=(Persona)ent.getValue();
+			System.out.println("Key: "+key+", Value: "+per);
 		}
 		
-		Iterator it = map.entrySet().iterator();
+		Iterator it = map.keySet().iterator();
 		
 		System.out.println("");
 		System.out.println("");
 		System.out.println("while");
 		
 		while(it.hasNext()){
-			Map.Entry entry=(Map.Entry)it.next();
-			System.out.println("Key: "+entry.getKey()+", Value: "+entry.getValue());
+			Integer key= (Integer)it.next();
+			System.out.println("Key: "+key+", Value: "+map.get(key));
 		}
 		
 		System.out.println("");
@@ -77,6 +79,7 @@ public class Principal {
 		
 		Map<Integer, Persona> sortedMap = new TreeMap<Integer, Persona>(map2);
 		printForeach(sortedMap, "sort");
+		
 	}
 	
 	private static void printForeach(Map<Integer, Persona> map, String title){
