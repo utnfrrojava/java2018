@@ -57,7 +57,7 @@ public class Principal {
 		
 		System.out.println("");
 		
-		map.remove(p3.getDni());
+		map.remove(678);
 		printForeach(map, "removed p3");
 		
 		System.out.println("");
